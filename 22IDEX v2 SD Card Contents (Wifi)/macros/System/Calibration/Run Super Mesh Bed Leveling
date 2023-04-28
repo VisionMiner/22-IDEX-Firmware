@@ -1,0 +1,14 @@
+if sensors.probes[0].value[0] > 500
+  M98 P"pick.g"
+
+G32 L1                                       ; Run True Bed Levelling to ensure that bed is leveled
+
+G1 U999 F18000
+M558 K0 P5 C"duex.e5stop" H1 F18000 T30000   ; Redefine probe with appropriate parameters
+M98 P"essential/autogen/ProbeOffset.g"       ; Set probe offsets
+M557 X-180:150 Y-145:150 P21:21              ; Define mesh grid
+G29 S0                                       ; Run mesh bed leveling
+G1 Z20 F18000
+
+if !exists(param.L)
+  M98 P"place.g"

@@ -1,0 +1,4 @@
+M291 R"PID tune will be started" P"Click OK if ready to proceed, do not leave printer unattended" S3
+
+M291 R"PID has been started" P"When PID tuning finished copy suggested parameters from the console and replace it in config.g for corresponding heater" T10
+M303 T1 S400 ; tune the primary heater of tool 0, target temperature 400C
