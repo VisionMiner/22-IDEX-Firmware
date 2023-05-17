@@ -3,7 +3,7 @@ echo >>"essential/autogen/wifimode.g" "; Please edit contents of '/macros/System
 echo >>"essential/autogen/wifimode.g" "M552 S1 ; Enable WiFi Client mode"
 
 
-M291 R"Do you want to switch WiFi module to Access Point Mode?" P" " S3
+M291 R"Do you want to switch WiFi module to Client Mode?" P" " S3
 M552 S0
 G4S5
 M552 S1
